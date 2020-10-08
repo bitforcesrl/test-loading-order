@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>you can preload a css and block anyway the rendering, move the css to the bottom to not block
+    </title>
+    <link rel="preload"
+          as="style"
+          media="screen"
+          href="http://localhost:3000/static?file=style1.css&delay=5000">
+
+    <!-- NOTE: to apply the css uncomment -->
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=5000">
+
+  </head>
+
+  <body>
+    9
+    <img src="http://localhost:3000/random-image/100/100"
+         width="100">
+
+    <!-- NOTE: to apply the css uncomment -->
+    <!-- <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=5000"> -->
+  </body>
+
+</html>

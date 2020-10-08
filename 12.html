@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Adding multiple CSS and one external script (without async or defer) will delay resources
+      fetch </title>
+
+    <!-- // NOTE add async to not delay the img fetch -->
+    <script src="http://localhost:3000/static?file=js1.js&delay=5000">
+    </script>
+
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=4000">
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style2.css&delay=2000">
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style2.css&delay=1000">
+
+    <!-- // NOTE add async to not delay the img fetch -->
+    <!-- <script src="http://localhost:3000/static?file=js1.js&delay=5000">
+    </script> -->
+  </head>
+
+  <body>
+    12
+    <img src="http://localhost:3000/random-image/2000/2000"
+         width="100">
+  </body>
+
+</html>

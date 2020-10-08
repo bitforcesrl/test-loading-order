@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Adding multiple CSS and inline JS before will not delay resoruces fetch / parsing, adding inline JS
+      after CSS will delay fetch and page parsing until CSS has completed the download</title>
+    <script>
+      console.log('inline 1')
+    </script>
+
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=4000">
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style2.css&delay=2000">
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style2.css&delay=1000">
+
+    <!-- NOTE: uncomment to view the delay -->
+    <!-- <script>
+      console.log('inline 2')
+    </script> -->
+
+  </head>
+
+  <body>
+    13
+    <img src="http://localhost:3000/random-image/100/100"
+         width="100">
+  </body>
+
+</html>

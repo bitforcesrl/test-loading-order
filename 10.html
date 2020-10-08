@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>you can use the onload trick to apply asap the css to the page, but if there are other blocking
+      resources the rendering will remains blocked
+    </title>
+
+    <link rel="preload"
+          as="style"
+          media="screen"
+          href="http://localhost:3000/static?file=style1.css&delay=2000"
+          onload="this.onload=null;this.rel='stylesheet'">
+
+    <script src="http://localhost:3000/static?file=js1.js&delay=1000">
+    </script>
+  </head>
+
+  <body>
+    12
+    <img src="http://localhost:3000/random-image/100/100"
+         width="100">
+  </body>
+
+</html>

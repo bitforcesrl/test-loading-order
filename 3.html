@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>JS Aync or defer doesn't block the rendering</title>
+    <script src="http://localhost:3000/static?file=js1.js&delay=2000"
+            async>
+            </script>
+    <script src="http://localhost:3000/static?file=js2.js&delay=3000"
+            async>
+            </script>
+  </head>
+
+  <body>
+    3
+    <img src="http://localhost:3000/random-image/100/100"
+         width="100">
+  </body>
+
+</html>

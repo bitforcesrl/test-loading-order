@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>JS with defer doesn't blocks the rendering and respects the order, if there are some async they
+      will be loaded and executed
+      independently</title>
+  </head>
+  <script src="http://localhost:3000/static?file=js1.js&delay=3000"
+          defer>
+          </script>
+  <script src="http://localhost:3000/static?file=js3.js&delay=1000"
+          defer>
+          </script>
+
+  <body>
+    6
+    <img src="http://localhost:3000/random-image/100/100"
+         width="100">
+
+    <script src="http://localhost:3000/static?file=js2.js&delay=2000"
+            defer>
+            </script>
+    <script src="http://localhost:3000/static?file=js4.js&delay=1000"
+            async>
+            </script>
+  </body>
+
+</html>

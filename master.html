@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Test loading order</title>
+    <!-- <link rel="preload"
+          as="style"
+          media="screen"
+          href="http://localhost:3000/static?file=style1.css&delay=3000"
+          onload="
+          this.onload=null;this.rel='stylesheet'"> -->
+
+    <!-- <script>
+      console.log('inline 1')
+    </script> -->
+
+    <!-- onload="
+      this.onload=null;this.rel='stylesheet'" -->
+
+
+    <!-- <link rel="stylesheet"
+        href="http://localhost:3000/static?file=style1.css&delay=3000"> -->
+
+    <!-- <script src="http://localhost:3000/static?file=js1.js&delay=5000">
+    </script> -->
+
+    <script>
+      console.log('inline 1')
+    </script>
+
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=1000">
+
+    <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=1000">
+
+    <!-- <script>
+      console.log('inline 2')
+    </script> -->
+
+    <!-- <script src="
+          http://localhost:3000/static?file=js2.js&delay=1000"
+            defer>
+            </script> -->
+
+    <!-- <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=3000"> -->
+  </head>
+
+  <body>
+    8
+    <img src="http://localhost:3000/static?file=car.jpg&delay=1000"
+         width="100">
+
+    <!-- <link rel="stylesheet"
+          href="http://localhost:3000/static?file=style1.css&delay=4000"> -->
+
+    <!-- <script src="
+          http://localhost:3000/static?file=js3.js&delay=2000"
+            defer></script> -->
+  </body>
+
+</html>

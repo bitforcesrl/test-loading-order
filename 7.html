@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>If you want to execute a js (loaded at the bottom of the page) without wait for blocking resources
+      like css or js you have to use async, otherwise it will be delayed</title>
+  </head>
+  <link rel="stylesheet"
+        href="http://localhost:3000/static?file=style1.css&delay=5000">
+
+  <body>
+    7
+    <img src="http://localhost:3000/random-image/100/100"
+         width="100">
+
+    <script src="http://localhost:3000/static?file=js4.js&delay=1000">
+    </script>
+    <!-- add async to run asap -->
+  </body>
+
+</html>
